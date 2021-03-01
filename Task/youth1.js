@@ -299,7 +299,7 @@ function ArticleShare() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const url = {
-                url: `https://focu.youth.cn/article/s?signature=0Z3Jgv96wqmVPeM7obRdNpHXgAmRhxNPJ6y4jpGDnANbo8KXQr&uid=46308484&phone_code=26170a068d9b9563e7028f197c8a4a2b&scid=33007686&time=1602937887&app_version=1.7.8&sign=d21dd80d0c6563f6f810dd76d7e0aef2`,
+                url: `https://focu.youth.cn/fivehot/20210301?sid=36522822&uid=52924465&timestamp=1614581117&signature=o9xqzDrKG6wJnYZ5Ek4eJOQ2XUY9dE37R3LXvBgNylVOMbA02W&share_id=52924465365228221614581120152&scene_id=fire_share&time=1614581120&phone_code=4e8bc0af2f820426d22fd388d7c4e8e7&app_version=1.8.2&sign=5075dedad7387eb0cce3fe7461e1ca7d`,
                 headers: signheaderVal,
             }
             $.post(url, async(error, response, data) => {

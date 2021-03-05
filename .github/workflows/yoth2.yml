@@ -12,18 +12,18 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/xiaokxiansheng/js.git ~/js
+          git clone https://github.com/pizile/CXK.git ~/CXK
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: npm install
         run: |
-          cd ~/js
+          cd ~/CXK
           npm install
           npm install cron
           npm install request
       - name: '运行 【中青看点2】'
         run: |
-          cd ~/js   
+          cd ~/CXK   
           node Task/youth2.js

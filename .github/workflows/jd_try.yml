@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/66903202/JD.git ~/JD
+          git clone https://github.com/pizile/CXK.git ~/CXK
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -27,13 +27,13 @@ jobs:
       - name: npm install
         if: env.JD_COOKIE
         run: |
-          cd ~/JD
+          cd ~/CXK
           npm install
       - name: '运行 【京东试用】'
         if: env.JD_COOKIE
         run: |
-          cd ~/JD
-          node jd_try.js
+          cd ~/CXK
+          node Task/jd_try.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}

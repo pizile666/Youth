@@ -25,12 +25,12 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.JD_COOKIE
+        #if: env.JD_COOKIE
         run: |
           cd ~/CXK
           npm install
       - name: '运行 【京东试用】'
-        if: env.JD_COOKIE
+        #if: env.JD_COOKIE
         run: |
           cd ~/CXK
           node Task/jd_try.js

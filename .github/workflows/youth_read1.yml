@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Youth_Read(ÖĞÇà×Ô¶¯ÔÄ¶ÁGZ)
+name: Youth_Read(ä¸­é’è‡ªåŠ¨é˜…è¯»GZ)
 
 on:
   workflow_dispatch:
@@ -29,35 +29,35 @@ jobs:
         run: |
           npm install
           
-      - name: 'ÔËĞĞ ¡¾ÖĞÇà¿´µã×Ô¶¯ÔÄ¶ÁÒ»¡¿'
+      - name: 'è¿è¡Œ ã€ä¸­é’çœ‹ç‚¹è‡ªåŠ¨é˜…è¯»ä¸€ã€‘'
         if: env.YOUTH_READ6
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ6 }}
 
-      - name: 'ÔËĞĞ ¡¾ÖĞÇà¿´µã×Ô¶¯ÔÄ¶Á¶ş¡¿'
+      - name: 'è¿è¡Œ ã€ä¸­é’çœ‹ç‚¹è‡ªåŠ¨é˜…è¯»äºŒã€‘'
         if: env.YOUTH_READ7
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ7 }}
           
-      - name: 'ÔËĞĞ ¡¾ÖĞÇà¿´µã×Ô¶¯ÔÄ¶ÁÈı¡¿'
+      - name: 'è¿è¡Œ ã€ä¸­é’çœ‹ç‚¹è‡ªåŠ¨é˜…è¯»ä¸‰ã€‘'
         if: env.YOUTH_READ8
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ8 }}
           
-      - name: 'ÔËĞĞ ¡¾ÖĞÇà¿´µã×Ô¶¯ÔÄ¶ÁËÄ¡¿'
+      - name: 'è¿è¡Œ ã€ä¸­é’çœ‹ç‚¹è‡ªåŠ¨é˜…è¯»å››ã€‘'
         if: env.YOUTH_READ9
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ9 }}
           
-      - name: 'ÔËĞĞ ¡¾ÖĞÇà¿´µã×Ô¶¯ÔÄ¶ÁÎå¡¿'
+      - name: 'è¿è¡Œ ã€ä¸­é’çœ‹ç‚¹è‡ªåŠ¨é˜…è¯»äº”ã€‘'
         if: env.YOUTH_READ10
         run: |
           node Task/Youth_Read.js

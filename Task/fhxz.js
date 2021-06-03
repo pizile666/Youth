@@ -1,6 +1,26 @@
+[rewrite_local]
 #柠檬富豪小镇
 https://sunnytown.hyskgame.com/api/messages\SaccessToken=\w+&msgtype=system_getGpvGameOptions url script-request-body https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/fhxz.js
-	@@ -34,7 +38,8 @@ let gj = '[{"type":"pet_buyPet","data":{}}]'
+[MITM]
+hostname = sunnytown.hyskgame.com
+#loon
+https://sunnytown.hyskgame.com/api/messages\SaccessToken=\w+&msgtype=system_getGpvGameOptions url script-request-body https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/fhxz.js, requires-body=true, timeout=10, tag=柠檬富豪小镇
+#surge
+柠檬富豪小镇 = type=https://sunnytown.hyskgame.com/api/messages\SaccessToken=\w+&msgtype=system_getGpvGameOptions,requires-body=1,max-size=0,script-path=https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/fhxz.js,script-update-interval=0
+*/
+// [task_local]
+//#柠檬富豪小镇
+// */10 * * * * https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/fhxz.js, tag=柠檬富豪小镇, enabled=true
+const $ = new Env('富豪小镇'); 
+ let status; 
+ status = (status = ($.getval("fhxzstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符 
+ const fhxzurlArr = [], fhxzhdArr = [],fhxzcount = '' 
+ let times = Math.round(Date.now() / 1000) 
+ let fhxzurl = $.getdata('fhxzurl') 
+ let fhxzhd = $.getdata('fhxzhd') 
+ let sjs = 1 
+let cj = '[{"type":"lottery_draw","data":{"priceType":3001}}]'
+	@@ -34,7 +38,8 @@
 let cd = '[{"type":"pet_feedPetFood","data":{}}]'
 let rqq = '[{"type":"carBox_receiveBoxReward","data":{}}]'
 let id = ""

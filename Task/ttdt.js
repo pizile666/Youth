@@ -16,7 +16,11 @@ let imei
 let theresult
 let index
 $.message = "";
-imeiarr = ["7A919106-58DF-4975-8101-B064988504EC"]
+imeiarr = [
+   
+    "7A919106-58DF-4975-8101-B064988504EC",
+    
+]
 !(async () => {
     await all();
 })()
@@ -33,25 +37,25 @@ async function all() {
         $.log(`\n第${imeiindex + 1}个账号执行任务:`)
         imei = imeiarr[imeiindex];
         currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-        md5str = `imei=${imei}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`
+        md5str = `imei=${imei}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`
         sign = MD5(md5str).toString().toUpperCase();
         await login();
         
                 while(1) {
                     currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-                    md5str = `session_id=${session_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`
+                    md5str = `session_id=${session_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`
                     sign = MD5(md5str).toString().toUpperCase();
                     await getQuestionList()
                     //await $.wait(1000);
                     for (let i = 0; i < uq_idarr.length; i++) {
                         for (let j = 0; j < answerarr.length; j++) {
                             currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-                            md5str = `answer=${answerarr[j]}&amp;session_id=${session_id}&amp;time=${currenttime}&amp;uq_id=${uq_idarr[i]}&amp;key=NcfVw#l5A!gQEO5@`
+                            md5str = `answer=${answerarr[j]}&session_id=${session_id}&time=${currenttime}&uq_id=${uq_idarr[i]}&key=NcfVw#l5A!gQEO5@`
                             sign = MD5(md5str).toString().toUpperCase();
                             theresult = await getAnsewr(j, i);
                             if (theresult == true) {
                                 currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-                                md5str = `pl_id=${pl_id}&amp;session_id=${session_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`
+                                md5str = `pl_id=${pl_id}&session_id=${session_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`
                                 sign = MD5(md5str).toString().toUpperCase();
                                 await doubleReward();
                             }
@@ -70,12 +74,12 @@ async function all() {
         
                 for (task_id = 1; task_id <= 30; task_id++) {
                     currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-                    md5str = `session_id=${session_id}&amp;task_id=${task_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`
+                    md5str = `session_id=${session_id}&task_id=${task_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`
                     sign = MD5(md5str).toString().toUpperCase();
                     theresult = await getTaskAward()
                     if (theresult == true) {
                         currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-                        md5str = `pl_id=${pl_id}&amp;session_id=${session_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`
+                        md5str = `pl_id=${pl_id}&session_id=${session_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`
                         sign = MD5(md5str).toString().toUpperCase();
                         await doubleReward();
                     }
@@ -85,26 +89,26 @@ async function all() {
         for (index = 1; index <= 9; index++) {
             type = typearr[index - 1];
             currenttime = parseInt(new Date().getTime() / 1000);//当前时间戳；
-            md5str = `is_new=1&amp;session_id=${session_id}&amp;time=${currenttime}&amp;type=${type}&amp;key=NcfVw#l5A!gQEO5@`;
+            md5str = `is_new=1&session_id=${session_id}&time=${currenttime}&type=${type}&key=NcfVw#l5A!gQEO5@`;
             sign = MD5(md5str).toString().toUpperCase();
             for (let ci = 0; ci < 15; ci++)
                 await clickLog();
 
             currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-            md5str = `index=${index}&amp;session_id=${session_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`
+            md5str = `index=${index}&session_id=${session_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`
             sign = MD5(md5str).toString().toUpperCase();
             await collectActive();
         }
 
 
         currenttime = parseInt(new Date().getTime() / 1000);//当前时间戳；
-        md5str = `is_new=1&amp;session_id=${session_id}&amp;time=${currenttime}&amp;type=${type}&amp;key=NcfVw#l5A!gQEO5@`;
+        md5str = `is_new=1&session_id=${session_id}&time=${currenttime}&type=${type}&key=NcfVw#l5A!gQEO5@`;
         sign = MD5(md5str).toString().toUpperCase();
         await clickLog();
 
 
         currenttime = parseInt(new Date().getTime() / 1000);//当前时间戳；
-        md5str = `session_id=${session_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`;
+        md5str = `session_id=${session_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`;
         sign = MD5(md5str).toString().toUpperCase();
         await getRedluckyMoney();
 
@@ -113,7 +117,7 @@ async function all() {
         for (let ti = 0; ti < type_idarr.length; ti++) {
             type_id = type_idarr[ti];
             currenttime = parseInt(new Date().getTime() / 1000)//当前时间戳；
-            md5str = `pay_type=2&amp;session_id=${session_id}&amp;time=${currenttime}&amp;type_id=${type_id}&amp;key=NcfVw#l5A!gQEO5@`
+            md5str = `pay_type=2&session_id=${session_id}&time=${currenttime}&type_id=${type_id}&key=NcfVw#l5A!gQEO5@`
             sign = MD5(md5str).toString().toUpperCase();
             await withdrawThirdApply();
             await $.wait(2000);
@@ -121,7 +125,7 @@ async function all() {
 
 
         currenttime = parseInt(new Date().getTime() / 1000);//当前时间戳；
-        md5str = `session_id=${session_id}&amp;time=${currenttime}&amp;key=NcfVw#l5A!gQEO5@`;
+        md5str = `session_id=${session_id}&time=${currenttime}&key=NcfVw#l5A!gQEO5@`;
         sign = MD5(md5str).toString().toUpperCase();
         await withdraw();
 
@@ -139,7 +143,7 @@ function getRedluckyMoney() {
         const url = "http://pic.anngudao.com/index/money/getRedluckyMoney";
         const headers = {
         };
-        const body = `session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `session_id=${session_id}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -170,7 +174,7 @@ function withdrawThirdApply() {
         const url = "http://pic.anngudao.com/index/money/withdrawThirdApply";
         const headers = {
         };
-        const body = `pay_type=2&amp;session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}&amp;type_id=${type_id}`;
+        const body = `pay_type=2&session_id=${session_id}&sign=${sign}&time=${currenttime}&type_id=${type_id}`;
         const request = {
             url: url,
             headers: headers,
@@ -214,7 +218,7 @@ function withdraw() {
         const url = "http://pic.anngudao.com/index/money/withdraw";
         const headers = {
         };
-        const body = `session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `session_id=${session_id}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -245,7 +249,7 @@ function finishAction(action) {
         const headers = {
 
         };
-        const body = `session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `session_id=${session_id}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -277,7 +281,7 @@ function clickLog() {
         const headers = {
 
         };
-        const body = `is_new=1&amp;session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}&amp;type=${type}`;
+        const body = `is_new=1&session_id=${session_id}&sign=${sign}&time=${currenttime}&type=${type}`;
         const request = {
             url: url,
             headers: headers,
@@ -312,7 +316,7 @@ function collectActive() {
         const headers = {
 
         };
-        const body = `index=${index}&amp;session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `index=${index}&session_id=${session_id}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -351,7 +355,7 @@ function getAnsewr(aindex, uindex) {
         const headers = {
 
         };
-        const body = `answer=${answerarr[aindex]}&amp;session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}&amp;uq_id=${uq_idarr[uindex]}`;
+        const body = `answer=${answerarr[aindex]}&session_id=${session_id}&sign=${sign}&time=${currenttime}&uq_id=${uq_idarr[uindex]}`;
         const request = {
             url: url,
             headers: headers,
@@ -397,7 +401,7 @@ function getQuestionList() {
         const headers = {
 
         };
-        const body = `session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `session_id=${session_id}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -438,7 +442,7 @@ function getTaskAward() {
         const headers = {
 
         };
-        const body = `session_id=${session_id}&amp;sign=${sign}&amp;task_id=${task_id}&amp;time=${currenttime}`;
+        const body = `session_id=${session_id}&sign=${sign}&task_id=${task_id}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -480,7 +484,7 @@ function login() {
         const headers = {
             "App-Refer": "2"
         };
-        const body = `imei=${imei}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `imei=${imei}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
@@ -521,7 +525,7 @@ function doubleReward() {
         const url = "http://pic.anngudao.com/index/user/doubleReward";
         const headers = {
         };
-        const body = `pl_id=${pl_id}&amp;session_id=${session_id}&amp;sign=${sign}&amp;time=${currenttime}`;
+        const body = `pl_id=${pl_id}&session_id=${session_id}&sign=${sign}&time=${currenttime}`;
         const request = {
             url: url,
             headers: headers,
